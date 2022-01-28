@@ -30,12 +30,18 @@ featureCounts #2.0.1
 
 In order to perform analysis with `STAR_pipeline.sh`, a project directory and the sub-directories must be created as the following structure: 
 
-> Project_directory/
-> |-- data
-> |   -- fastq
-> |   	`*fastq.gz`
-> |-- results
-> |-- src
+```shell
+Project_directory/
+|-- data
+|   -- fastq
+|   	`*fastq.gz`
+|-- results
+|-- src
+```
+
+
+
+
 
 ```bash
 mkdir -p data/fastq
@@ -92,18 +98,20 @@ cp /wherever/you/store/the/fastq.gz ./data/fastq
 
 After preparation of the project directory, it should look like:
 
-> RNApipeTest/
-> ├── data
-> │   └── fastq
-> │       ├── S1_R1.fastq.gz
-> │       ├── S1_R2.fastq.gz
-> │       ├── S2_R1.fastq.gz
-> │       ├── S2_R2.fastq.gz
-> │       ├── ...
-> │       └── S20_R2.fastq.gz
-> ├── results
-> └── src
->     └── STAR_pipeline.sh
+```shell
+RNApipeTest/
+├── data
+│   └── fastq
+│       ├── S1_R1.fastq.gz
+│       ├── S1_R2.fastq.gz
+│       ├── S2_R1.fastq.gz
+│       ├── S2_R2.fastq.gz
+│       ├── ...
+│       └── S20_R2.fastq.gz
+├── results
+└── src
+ └── STAR_pipeline.sh
+```
 
 
 
