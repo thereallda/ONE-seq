@@ -41,7 +41,7 @@ Scripts in "Quality_Assessment" folder:
 
 ## NAD-RNA analysis
 
-The framework of main data analysis of NAD-RNA is suitable for any NAD-RNA-seq data processed with the RNA-seq pipeline mentioned above. Below describing the analysis with data from young and old mouse.
+The framework of main data analysis of NAD-RNA is suitable for any NAD-RNA-seq data processed with the RNA-seq pipeline mentioned above. Below demonstrating the analysis with data from young and old mouse.
 
 > Table of sample information.
 >
@@ -115,5 +115,101 @@ The analysis includes:
 
 - Pathway enrichment analysis of NAD-RNA.
 - Visualization of pathway enrichment results.
+
+
+
+## Others
+
+Others folder contains the following scripts: 
+
+### spike-in RNA assessment
+
+This analysis is performed with NAD-RNA-seq data from samples mixed with spike-in RNA that had different ratio of NAD-RNA.
+
+
+> Table of sample information.
+> | GSM_ID                                                       | Sample_Name       |
+> | ------------------------------------------------------------ | --------------- |
+> | [GSM5831997](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5831997) | NAD0_Input_rep1 |
+> | [GSM5831998](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5831998) | NAD0_Input_rep2 |
+> | [GSM5831999](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5831999) | NAD0_Input_rep3 |
+> | [GSM5832000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832000) | NAD1_Input_rep1   |
+> | [GSM5832001](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832001) | NAD1_Input_rep2   |
+> | [GSM5832002](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832002) | NAD1_Input_rep3   |
+> | [GSM5832003](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832003) | NAD5_Input_rep1   |
+> | [GSM5832004](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832004) | NAD5_Input_rep2   |
+> | [GSM5832005](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832005) | NAD5_Input_rep3   |
+> | [GSM5832006](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832006) | NAD10_Input_rep1  |
+> | [GSM5832007](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832007) | NAD10_Input_rep2  |
+> | [GSM5832008](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832008) | NAD10_Input_rep3  |
+> | [GSM5832009](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832009) | NAD0_Enrich_rep1  |
+> | [GSM5832010](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832010) | NAD0_Enrich_rep2  |
+> | [GSM5832011](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832011) | NAD0_Enrich_rep3  |
+> | [GSM5832012](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832012) | NAD1_Enrich_rep1  |
+> | [GSM5832013](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832013) | NAD1_Enrich_rep2  |
+> | [GSM5832014](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832014) | NAD1_Enrich_rep3  |
+> | [GSM5832015](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832015) | NAD5_Enrich_rep1  |
+> | [GSM5832016](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832016) | NAD5_Enrich_rep2  |
+> | [GSM5832017](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832017) | NAD5_Enrich_rep3  |
+> | [GSM5832018](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832018) | NAD10_Enrich_rep1 |
+> | [GSM5832019](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832019) | NAD10_Enrich_rep2 |
+> | [GSM5832020](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832020) | NAD10_Enrich_rep3 |
+
+Following analysis described above (i.e., `RNA-seq_pipeline`), the read counts of spike-in RNA were assessed. Raw counts of spike-in RNA can be accessed in the counts file online ([GSE194271_Counts_ONE-seq_Spikein_RNA.csv.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE194271&format=file&file=GSE194271%5FCounts%5FONE%2Dseq%5FSpikein%5FRNA%2Ecsv%2Egz)).
+
+
+
+`spike-in_RNA_assessment.R`: Data analysis script for assessment of spike-in RNA.
+
+The analysis requires:
+
+- Counts files from `featureCounts`.
+- Sample information (sample names, group, contrast).
+
+The analysis includes: 
+
+- Data cleaning.
+- Creating boxplot of the normalized read counts of spike-in RNA.
+
+
+
+### NudC assessment
+
+This analysis is performed with NAD-RNA-seq data with or without NudC treatment.
+
+> Table of sample information.
+>
+> | GSM_ID                                                       | Sample_Name              |
+> | ------------------------------------------------------------ | ------------------------ |
+> | [GSM5832021](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832021) | Without_NudC_Input_rep1  |
+> | [GSM5832022](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832022) | Without_NudC_Input_rep2  |
+> | [GSM5832023](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832023) | Without_NudC_Input_rep3  |
+> | [GSM5832024](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832024) | With_NudC_Input_rep1     |
+> | [GSM5832025](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832025) | With_NudC_Input_rep2     |
+> | [GSM5832026](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832026) | With_NudC_Input_rep3     |
+> | [GSM5832027](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832027) | Without_NudC_Enrich_rep1 |
+> | [GSM5832028](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832028) | Without_NudC_Enrich_rep2 |
+> | [GSM5832029](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832029) | Without_NudC_Enrich_rep3 |
+> | [GSM5832030](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832030) | With_NudC_Enrich_rep1    |
+> | [GSM5832031](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832031) | With_NudC_Enrich_rep2    |
+> | [GSM5832032](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832032) | With_NudC_Enrich_rep3    |
+
+Following analysis described above (i.e., `RNA-seq_pipeline` and `NAD-RNA_identification`), the NAD modification level of NAD-RNA identified from the NAD-RNA-seq data with or without NudC treatment were assessed. Information of NAD-RNA can be found in our online supplementary information (Supplementary Table 1). 
+
+
+
+`NudC_assessment.R`: Script for assessing the effect of NudC treatment.
+
+The analysis requires:
+
+- Counts files from `featureCounts`.
+- Sample information (sample names, group, contrast).
+- Results of differential enrichment analysis from `NAD-RNA_identification.R`.
+
+The analysis includes: 
+
+- Overlaps of NAD-RNA identified from different condition.
+- Visualization with venn diagram and scatter plot.
+
 
 

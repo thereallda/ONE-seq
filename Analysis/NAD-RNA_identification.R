@@ -64,7 +64,7 @@ ggsave('results/qc/PCA_PC12_vst.pdf', width=6, height=5)
 # Differential enrichment analysis
 coldatas <- data.frame(row.names = colnames(counts.keep), 
                        group_list = samples_group)
-dds <- DESeqDataSetFromMatrix(countData = counts.keep, 
+dds <- DESeqDataSetFromMatrix(countData = counts_keep, 
                               colData = coldatas, 
                               design = ~ group_list)
 de <- DESeq(dds)
