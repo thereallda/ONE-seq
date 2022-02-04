@@ -183,16 +183,12 @@ This analysis is performed with NAD-RNA-seq data with or without NudC treatment.
 > | ------------------------------------------------------------ | ------------------------ |
 > | [GSM5832021](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832021) | Without_NudC_Input_rep1  |
 > | [GSM5832022](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832022) | Without_NudC_Input_rep2  |
-> | [GSM5832023](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832023) | Without_NudC_Input_rep3  |
 > | [GSM5832024](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832024) | With_NudC_Input_rep1     |
 > | [GSM5832025](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832025) | With_NudC_Input_rep2     |
-> | [GSM5832026](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832026) | With_NudC_Input_rep3     |
 > | [GSM5832027](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832027) | Without_NudC_Enrich_rep1 |
 > | [GSM5832028](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832028) | Without_NudC_Enrich_rep2 |
-> | [GSM5832029](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832029) | Without_NudC_Enrich_rep3 |
 > | [GSM5832030](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832030) | With_NudC_Enrich_rep1    |
 > | [GSM5832031](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832031) | With_NudC_Enrich_rep2    |
-> | [GSM5832032](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832032) | With_NudC_Enrich_rep3    |
 
 Following analysis described above (i.e., `RNA-seq_pipeline` and `NAD-RNA_identification`), the NAD modification level of NAD-RNA identified from the NAD-RNA-seq data with or without NudC treatment were assessed. Information of NAD-RNA can be found in our online supplementary information (Supplementary Table 1). 
 
