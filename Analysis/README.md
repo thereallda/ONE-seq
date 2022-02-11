@@ -41,7 +41,7 @@ Scripts in "Quality_Assessment" folder:
 
 ## NAD-RNA analysis
 
-The framework of main data analysis of NAD-RNA is suitable for any NAD-RNA-seq data processed with the RNA-seq pipeline mentioned above. Below demonstrating the analysis with data from young and old mouse.
+The main NAD-RNA data analysis framework is suitable for any NAD-RNA-seq data processed with the RNA-seq pipeline mentioned above. Below demonstrating the analysis with data from young and old mice.
 
 > Table of sample information.
 >
@@ -120,8 +120,6 @@ The analysis includes:
 
 ## Others
 
-Others folder contains the following scripts: 
-
 ### spike-in RNA assessment
 
 This analysis is performed with NAD-RNA-seq data from samples mixed with spike-in RNA that had different ratio of NAD-RNA.
@@ -155,7 +153,7 @@ This analysis is performed with NAD-RNA-seq data from samples mixed with spike-i
 > | [GSM5832019](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832019) | NAD10_Enrich_rep2 |
 > | [GSM5832020](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832020) | NAD10_Enrich_rep3 |
 
-Following analysis described above (i.e., `RNA-seq_pipeline`), the read counts of spike-in RNA were assessed. Raw counts of spike-in RNA can be accessed in the counts file online ([GSE194271_Counts_ONE-seq_Spikein_RNA.csv.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE194271&format=file&file=GSE194271%5FCounts%5FONE%2Dseq%5FSpikein%5FRNA%2Ecsv%2Egz)).
+Following analysis described above (i.e., `RNA-seq_pipeline`), the read counts of spike-in RNA were accessed. Raw counts of spike-in RNA can be accessed in the counts file online ([GSE194271_Counts_ONE-seq_Spikein_RNA.csv.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE194271&format=file&file=GSE194271%5FCounts%5FONE%2Dseq%5FSpikein%5FRNA%2Ecsv%2Egz)).
 
 
 
@@ -169,7 +167,7 @@ The analysis requires:
 The analysis includes: 
 
 - Data cleaning.
-- Creating boxplot of the normalized read counts of spike-in RNA.
+- Creating boxplot of the fold change of spike-in RNA read counts between Enrichment and Input samples.
 
 
 
@@ -190,7 +188,7 @@ This analysis is performed with NAD-RNA-seq data with or without NudC treatment.
 > | [GSM5832030](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832030) | With_NudC_Enrich_rep1    |
 > | [GSM5832031](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5832031) | With_NudC_Enrich_rep2    |
 
-Following analysis described above (i.e., `RNA-seq_pipeline` and `NAD-RNA_identification`), the NAD modification level of NAD-RNA identified from the NAD-RNA-seq data with or without NudC treatment were assessed. Information of NAD-RNA can be found in our online supplementary information (Supplementary Table 1). 
+Following analysis described above (i.e., `RNA-seq_pipeline` and `NAD-RNA_identification`), the NAD modification level of NAD-RNA identified from the NAD-RNA-seq data with or without NudC treatment were retrieved. Information of NAD-RNA can be found in our online supplementary information (Supplementary Table 1). 
 
 
 
