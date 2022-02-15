@@ -34,10 +34,6 @@ ggdf1$gene_type <- str_replace(ggdf1$gene_type, 'IG_C_gene|TR_C_gene', 'protein_
 ggdf1$gene_type <- factor(ggdf1$gene_type, levels=c('ncRNA','pseudogene','protein_coding'))
 
 # MA plot ----
-counts.norm <- DESeq2::counts(de, normalized=T)
-avg.in <- tibble(GeneID=rownames(counts.norm), 
-                 lavg_y=log2(rowMeans(counts.norm[, 1:4])+1), 
-                 lavg_o=log2(rowMeans(counts.norm[, 5:8])+1))
 # young
 NAD_Y %>% 
   mutate(sig=if_else(log2FoldChange > 1 & padj < 0.05, 'NAD-RNA', 'None')) %>% 
@@ -50,7 +46,7 @@ NAD_Y %>%
         legend.position = 'top') +
   geom_hline(yintercept = 0, lty='dashed') +
   scale_color_manual(values = c("#046C9A", "#D5D5D3")) +
-  labs(x='Log2 (average abundance+1)', y='Log2 Enrich/Input', color='', title='Young')
+  labs(x='Log2 (average abundance+1)', y='Log2 Enrichment/Input', color='', title='Young')
 ggsave('results/stats/MAplot_young.pdf', width=5, height=4)
 
 # old
@@ -65,7 +61,7 @@ NAD_O %>%
         legend.position = 'top') +
   geom_hline(yintercept = 0, lty='dashed') +
   scale_color_manual(values = c("#046C9A", "#D5D5D3")) +
-  labs(x='Log2 (average abundance+1)', y='Log2 Enrich/Input', color='', title='Old')
+  labs(x='Log2 (average abundance+1)', y='Log2 Enrichment/Input', color='', title='Old')
 ggsave('results/stats/MAplot_old.pdf', width=5, height=4)
 
 # gene type ----
@@ -144,7 +140,7 @@ ggbetweenstats(ggdf1, x=Groups, y=LFCs,
   theme(axis.text = element_text(color='black')) +
   scale_color_manual(values=c('#38678F', '#C8B98C')) +
   scale_y_continuous(labels=1:4, breaks=1:4, limits=c(0.8,4),expand=c(0,0)) +
-  labs(x='', y='log2 Fold Change (Enrich/Input)')
+  labs(x='', y='log2 Fold Change (Enrichment/Input)')
 ggsave('results/stats/NAD-RNA_Ratio.pdf', width=5, height=6)
 
 # Dynamics of gene-specific NAD modification levels in scatter plot ----
@@ -186,5 +182,5 @@ ggplot(NAD_YO, aes(x=2^log2FoldChange.x, y=2^log2FoldChange.y)) +
   scale_y_continuous(labels = 0:10, breaks = 0:10, limits = c(0,10), expand = c(0,0)) +
   scale_xsidey_continuous(limits = c(0,1)) +
   scale_ysidex_continuous(limits = c(0,1)) +
-  labs(color='', x='Fold Change (Enrich/Input)\nYoung', y='Old\nFold Change (Enrich/Input)', title='All NAD-RNA')
+  labs(color='', x='Fold Change (Enrichment/Input)\nYoung', y='Old\nFold Change (Enrichment/Input)', title='All NAD-RNA')
 ggsave('results/stats/YO_FCplot.pdf', width=6, height=6)
