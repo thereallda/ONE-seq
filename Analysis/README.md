@@ -92,14 +92,12 @@ The analysis requires:
 
 The analysis explores the characteristics of NAD-RNA, including: 
 
-- gene abundance ~ NAD modification level (MA-plot);
+- Gene expression abundance ~ NAD modification level (MA-plot);
 - Gene type;
 - Chromosome distribution;
 - Gene length;
 - Dynamics of global NAD modification levels;
 - Dynamics of gene-specific NAD modification levels.
-
-
 
 ### Pathway enrichment analysis
 
@@ -116,7 +114,24 @@ The analysis includes:
 - Pathway enrichment analysis of NAD-RNA.
 - Visualization of pathway enrichment results.
 
+### Analysis of intron
 
+Analysis of intron read counts was adapted from [Lee et.al.](https://doi.org/10.1093/nargab/lqaa073). 
+
+In "Analysis_of_intron" folder: 
+
+1. `gtf_to_exon_saf.R`: Convert gtf file to simplified exon locations and save in saf format (also saves GENCODE gene information to txt).
+2. `exon_saf_to_genebody_and_intron_saf.R`: Exon saf file is used to create genebody saf and intron saf files .
+3. `genebody_saf_to_nonoverlapping_genebody_saf.R`: Create genebody saf file for non-overlapping genes.
+4. `count_intron_reads.R`: Summarizing reads into intron counts.
+5. `analysis_of_intron_counts.R`: Differential analysis on intron counts and visualization. 
+
+Genome browser views of selected genes can be accessed at UCSC Genome Browser online sessions:
+
+- Cyp2c70 (http://genome.ucsc.edu/s/lda97/Cyp2c70_ONE-seq)
+- Mup13 (http://genome.ucsc.edu/s/lda97/Mup13_ONE-seq)
+- Mup19 (http://genome.ucsc.edu/s/lda97/Mup19_ONE-seq) 
+- Mettl7b (http://genome.ucsc.edu/s/lda97/Mettl7b_ONE-seq) 
 
 ## Others
 
