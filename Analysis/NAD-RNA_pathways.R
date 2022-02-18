@@ -7,7 +7,7 @@ load('data/NADRNA.RData')
 # create the following directories
 if (!dir.exists(results/FE) ) dir.create(results/FE, recursive=TRUE)
 
-# sources: GO:BP, GO:CC and REAC only
+# sources: GO:BP and REAC only
 multi_gores <- gost(query=list('Young'=NAD_Ysig$GeneID, 'Old'=NAD_Osig$GeneID),
                      organism='mmusculus',
                      exclude_iea=TRUE, 
@@ -38,7 +38,7 @@ subset(gem, Phenotype == 'Young') %>%
 subset(gem, Phenotype == 'Old') %>% 
   write.table(file = "results/FE/YO_GOBP_REAC_gemO.txt", sep="\t", quote=F, row.names=F)
 
-# bar plot visualization of top 10 go terms in young
+# bar plot of top 10 go terms in young
 multi_gores_cut$result %>% 
   filter(query == 'Young') %>%
   filter(term_name != 'Respiratory electron transport, ATP synthesis by chemiosmotic coupling, and heat production by uncoupling proteins.') %>%
