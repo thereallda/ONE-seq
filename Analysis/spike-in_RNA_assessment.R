@@ -20,7 +20,7 @@ lcpm.keep <- edgeR::cpm(counts.keep, log=T)
 
 # ComBat for removing batch effect
 # input clean and pre-normalized data
-lcpm.rmbat <- sva::ComBat(lcpm.keep, batch=rep(c(1,2), each=12))
+lcpm.rmbat <- sva::ComBat(lcpm.keep, batch=rep(rep(c(1,2), each=6), times=2))
 
 # Calculate the logFoldChange of the SpikeinRNA CPM between Enrichment and Input
 # NAD 0%, 1%, 5%, 10%
